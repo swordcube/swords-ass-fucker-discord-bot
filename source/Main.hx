@@ -55,13 +55,13 @@ class Main {
 			{
 				type: CommandType.STRING,
 				name: "person",
-				description: "bitch",
+				description: "The person/object who died.",
 				required: true
 			},
 			{
 				type: CommandType.STRING,
 				name: "deathYear",
-				description: "bitch",
+				description: "The year the person/object died.",
 				required: false
 			}
 		]);
