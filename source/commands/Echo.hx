@@ -12,7 +12,10 @@ class Echo extends BaseCommand {
 
     @async override function run(m:Interaction) {
         var embed:Embed = {
-            title: m.user.discriminator,
+            author: {
+                name: '${m.member.user.username}#${m.member.user.discriminator}',
+                icon_url: Main.generateAvatarURL(m.member.user.id, m.member.user.avatar)
+            },
             description: m.getValue("message"),
             color: Main.getEmbedColor()
         };

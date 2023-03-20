@@ -74,6 +74,10 @@ class Main {
 		return Std.parseInt("0x"+settings.embedColor.replace("0x", "").replace("#", ""));
 	}
 
+	public static inline function generateAvatarURL(userID:String, avatarID:String, ?size:Int = 128) {
+		return 'https://cdn.discordapp.com/avatars/$userID/$avatarID.webp?size=$size';
+	}
+
 	// ---- SHIT YOU SHOULDN'T HAVE TO WORRY ABOUT ----
 
 	static function main() {
