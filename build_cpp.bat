@@ -1,6 +1,6 @@
 @echo off
 cls
-haxe build.hxml
+haxe build_cpp.hxml
 cd bin/cpp
 Main.exe
 cd ../../

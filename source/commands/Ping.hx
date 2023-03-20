@@ -7,13 +7,14 @@ import hxdiscord.types.*;
 class Ping extends BaseCommand {
     override function init() {
         name = "ping";
+        description = "Returns the ping of the bot.";
     }
 
-    @async override function run(m:Message, arguments:Array<String>) {
+    @async override function run(m:Interaction) {
         var embed:Embed = {
             title: ":ping_pong: Ping!",
             description: 'Pinging...',
-            color: 0x5b7fdd
+            color: Main.getEmbedColor()
         };
 
         var before:Float = Sys.time();
@@ -23,7 +24,7 @@ class Ping extends BaseCommand {
         embed.description = 'Current ping is ${Math.round(ping)}ms!';
         
         @:privateAccess
-        @await m.editMessage({
+        @await m.edit({
             embeds: [embed]
         });
     }

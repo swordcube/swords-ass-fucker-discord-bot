@@ -1,4 +1,5 @@
 {
-    "prefix": "ass!",
-    "version": "1.0.0"
+    "version": "1.0.0",
+
+    "embedColor": "#5b7fdd"
 }
