@@ -4,5 +4,9 @@
 --library hxdiscord
 --library await
 
+--define HXCPP_CHECK_POINTER
+--define HXCPP_STACK_LINE
+--define HXCPP_DEBUG_LINK
+
 -main Main
 --cpp bin/cpp

@@ -60,8 +60,16 @@ class Main {
 			},
 			{
 				type: CommandType.STRING,
-				name: "deathYear",
+				name: "deathyear",
 				description: "The year the person/object died.",
+				required: false
+			}
+		]);
+		addCommand(new commands.UserInfo(), [
+			{
+				type: CommandType.USER,
+				name: "user",
+				description: "The user to get the info of.",
 				required: false
 			}
 		]);

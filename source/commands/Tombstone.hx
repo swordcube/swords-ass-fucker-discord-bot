@@ -15,7 +15,7 @@ class Tombstone extends BaseCommand {
         var embed:Embed = {
             title: ":headstone: Here's your generated tombstone!",
             image: {
-                url: 'http://www.tombstonebuilder.com/generate.php?top1=R.I.P&top2=&top3=${cast(m.getValue("person"), String).replace("-", "+")}&top4=${(m.getValue("deathYear") != null) ? m.getValue("deathYear") : curYear}+-+${curYear}&sp='.replace(" ", "+")
+                url: 'http://www.tombstonebuilder.com/generate.php?top1=R.I.P&top2=&top3=${cast(m.getValue("person"), String).replace("-", "+")}&top4=${(m.getValue("deathyear") != null) ? m.getValue("deathyear") : curYear}+-+${curYear}&sp='.replace(" ", "+")
             },
             color: Main.getEmbedColor()
         };
