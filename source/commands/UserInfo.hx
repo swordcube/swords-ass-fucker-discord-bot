@@ -18,22 +18,39 @@ class UserInfo extends BaseCommand {
         var user:User = Endpoints.getUser(userID);
         var member:Member = Endpoints.getGuildMember(m.guild_id, userID);
 
+        var joinedAt:Date = DateUtils.fromISO8601(member.joined_at);
+
         var embed:Embed = {
             author: {
                 name: 'Info for ${user.username}#${user.discriminator}',
                 icon_url: Main.generateAvatarURL(user.id, user.avatar)
             },
-            // doing == true here because um
-            // doing null checks is kinda dumb tbh
-            description: '
-            User ID: ${user.id}
-            Display Name: ${(member.nick != null) ? member.nick : user.username}
-            Verified: ${user.verified == true}
-            Is Bot: ${user.bot == true}
-            Joined At: ${DateUtils.fromISO8601(member.joined_at).toString()}
-            Created At: Not Implemented
-            Pending Member: ${member.pending == true}
-            ',
+            fields: [
+                {
+                    name: "ID",
+                    value: user.id
+                },
+                {
+                    name: "Nickname",
+                    value: (member.nick != null) ? member.nick : user.username
+                },
+                {
+                    name: "Verified",
+                    value: Std.string(user.verified == true)
+                },
+                {
+                    name: "Is Bot",
+                    value: Std.string(user.bot == true)
+                },
+                {
+                    name: "Is Pending",
+                    value: Std.string(member.pending == true)
+                },
+                {
+                    name: "Joined At",
+                    value: DateTools.format(joinedAt, "%m/%d/%Y %r")
+                }
+            ],
             color: Main.getEmbedColor()
         };
 
