@@ -8,5 +8,7 @@
 --define HXCPP_STACK_LINE
 --define HXCPP_DEBUG_LINK
 
+--define no-deprecation-warnings
+
 -main Main
 --cpp bin/cpp

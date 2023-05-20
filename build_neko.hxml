@@ -4,5 +4,7 @@
 --library hxdiscord
 --library await
 
+--define no-deprecation-warnings
+
 -main Main
 --neko bin/neko/main.n

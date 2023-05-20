@@ -16,7 +16,8 @@ class UserInfo extends BaseCommand {
     @async override function run(m:Interaction) {
         var userID:String = (m.getValue("user") != null) ? m.getValue("user") : m.member.user.id;
         var user:User = Endpoints.getUser(userID);
-        var member:Member = Endpoints.getGuildMember(m.guild_id, userID);
+        var member:Member = null;
+        Endpoints.getGuildMember(m.guild_id, userID, (m) -> member = m, (e) -> trace(e));
 
         var joinedAt:Date = DateUtils.fromISO8601(member.joined_at);
 

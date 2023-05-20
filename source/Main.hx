@@ -100,6 +100,7 @@ class Main {
 				Sys.println('Something went wrong registering a message! The bot might be rate limited!\nHere\'s the error message: ${e.toString()}');
 			}
 		};
+		bot.connect();
 	}
 
 	public static function onReady() {
